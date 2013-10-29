@@ -14,10 +14,7 @@ require('./tnsparser.class.php');
 $TNS = new tnsparser;
 try
   {
-  #$retval = $TNS->ParseTNS('./tnsnames_win.ora');
-  $retval = $TNS->ParseTNS('./tnsnames.ora');
-  #$retval = $TNS->ParseTNS('./tnsnames_ebola.ora');
-  #$retval = $TNS->ParseTNS('./oraexample6-4.ora');
+  $retval = $TNS->ParseTNS('./oraexample6-4.ora');
   }
 catch(Exception $e)
   {
