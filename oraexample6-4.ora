@@ -1,0 +1,27 @@
+sample1=
+  (DESCRIPTION=
+  (SOURCE_ROUTE=yes)
+  (ADDRESS=(PROTOCOL=tcp)(HOST=host1)(PORT=1630)) # 1
+  (ADDRESS_LIST=
+    (FAILOVER=on)
+    (LOAD_BALANCE=off) # 2
+    (ADDRESS=(PROTOCOL=tcp)(HOST=host2a)(PORT=1630))
+    (ADDRESS=(PROTOCOL=tcp)(HOST=host2b)(PORT=1630))
+  )
+  (ADDRESS=(PROTOCOL=tcp)(HOST=host3)(PORT=1521)) #3
+    (CONNECT_DATA=(SERVICE_NAME=Sales.us.example.com)))
+
+
+sample2=
+  (DESCRIPTION=
+  (LOAD_BALANCE=on) # 1
+  (FAILOVER=on)
+  (ADDRESS_LIST=
+    (SOURCE_ROUTE=yes)
+    (ADDRESS=(PROTOCOL=tcp)(HOST=host1)(PORT=1630)) # 2
+    (ADDRESS=(PROTOCOL=tcp)(HOST=host2)(PORT=1521)))
+  (ADDRESS_LIST=
+    (SOURCE_ROUTE=yes)
+    (ADDRESS=(PROTOCOL=tcp)(HOST=host3)(port=1630))
+    (ADDRESS=(PROTOCOL=tcp)(HOST=host4)(port=1521)))
+  (CONNECT_DATA=(SERVICE_NAME=sales.us.example.com))) # 3
