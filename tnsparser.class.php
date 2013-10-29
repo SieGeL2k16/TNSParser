@@ -2,7 +2,7 @@
 /**
  * Class to Parse tnsnames.ora file.
  * @author Sascha 'SieGeL' Pfalz <webmaster@saschapfalz.de>
- * @version 0.1 ($Id)
+ * @version 0.1 ($Id$)
  * @license http://opensource.org/licenses/bsd-license.php BSD License
  */
 
