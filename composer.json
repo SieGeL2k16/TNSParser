@@ -3,7 +3,7 @@
   "type": "library",
   "description": "Class for parsing Oracle TNS files (tnsnames.ora).",
   "keywords": ["oracle","class","tnsnames.ora","TNS"],
-  "homepage": "https://github.com/SieGeL2k16/db_mysqli/",
+  "homepage": "https://github.com/SieGeL2k16/TNSParser",
   "license": "BSD-2-Clause-FreeBSD",
   "authors": [
     {
