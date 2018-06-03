@@ -1,10 +1,12 @@
 <?php
 /**
- * Class to Parse tnsnames.ora file.
- * @author Sascha 'SieGeL' Pfalz <webmaster@saschapfalz.de>
- * @version 0.1 ($Id$)
+ * Class to parse Oracle tnsnames.ora files.
+ * @author Sascha 'SieGeL' Pfalz <php@saschapfalz.de>
+ * @version 1.0.0
  * @license http://opensource.org/licenses/bsd-license.php BSD License
  */
+
+namespace spfalz;
 
 /**
  * @package TNSparser
@@ -12,13 +14,14 @@
 class TNSparser
   {
   /** Version of this class */
-  const CLASS_VERSION  = '0.1';
-
+  const CLASS_VERSION  = '1.0.0';
+  
   /**
    * Parses a given TNS file and returns the contents of that file as associative array.
    * In case of an error throws an exception.
    * @param string $tfile The complete filename to the tnsnames.ora file.
    * @return array The contents of the file as associative array
+   * @throws \Exception
    */
   public function ParseTNS($tfile)
     {
@@ -27,11 +30,11 @@ class TNSparser
 
     if(@file_exists($tfile) === FALSE)
       {
-      throw new Exception(sprintf('Passed file "%s" not found / not readable!',$tfile));
+      throw new \Exception(sprintf('Passed file "%s" not found / not readable!',$tfile));
       }
     if(!($fp = fopen($tfile,"rb")))
       {
-      throw new Exception(sprintf('Unable to open file "%s" for reading??',$tfile));
+      throw new \Exception(sprintf('Unable to open file "%s" for reading??',$tfile));
       }
     $lineCount  = 0;
     $lineBuffer = '';
@@ -71,7 +74,7 @@ class TNSparser
     fclose($fp);
     if($openCount != $closeCount)
       {
-      throw new Exception(sprintf('TNS file "%s" seems to be malformed - please check syntax!',$tfile));
+      throw new \Exception(sprintf('TNS file "%s" seems to be malformed - please check syntax!',$tfile));
       }
     ksort($tnsEntries);
     return($tnsEntries);
@@ -86,6 +89,7 @@ class TNSparser
   private function ParseTNSEntry($tnsentry,&$tnsname)
     {
     $isOpen = $isClose = 0;
+    $cmdarray = [];
     // Retrieve TNS name first, we use this as index for the array
     $tnsname = trim(preg_replace("/^(.*?)(=)(.*)/","$1",$tnsentry));
     $tnsdata = trim(preg_replace("/^(.*?)(=)(.*)/","$3",$tnsentry));
@@ -116,4 +120,3 @@ class TNSparser
     }
 
   } // End-of-class
-?>

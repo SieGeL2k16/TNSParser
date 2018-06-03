@@ -1,9 +1,0 @@
-APPLICATION=TNSParser class
-
-0.1:
-
-28-OCT-2013 - Initial version, created for OIS to have some kind of auto-
-              configuration available (reading of TNS).
-
--------------------------------------------------------------------[EOF]-----
-$Id$

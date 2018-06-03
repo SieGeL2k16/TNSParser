@@ -1,0 +1,19 @@
+{
+  "name": "spfalz/tnsparser",
+  "type": "library",
+  "description": "Class for parsing Oracle TNS files (tnsnames.ora).",
+  "keywords": ["oracle","class","tnsnames.ora","TNS"],
+  "homepage": "https://github.com/SieGeL2k16/db_mysqli/",
+  "license": "BSD-2-Clause-FreeBSD",
+  "authors": [
+    {
+      "name": "Sascha Pfalz",
+      "email": "php@saschapfalz.de",
+      "homepage": "https://www.saschapfalz.de",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.0||^7.0"
+  }
+}
