@@ -14,7 +14,7 @@ namespace spfalz;
 class TNSparser
   {
   /** Version of this class */
-  const CLASS_VERSION  = '1.0.0';
+  const CLASS_VERSION  = '1.0.1';
   
   /**
    * Parses a given TNS file and returns the contents of that file as associative array.

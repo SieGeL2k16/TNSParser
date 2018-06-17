@@ -1,5 +1,11 @@
 # TNSParser class
 
+### 1.0.1
+
+##### 17-Jun-2018
+
+- Fixed composer.json to autoinclude the class itself....
+
 ### 1.0.0
 
 ##### 03-Jun-2018
